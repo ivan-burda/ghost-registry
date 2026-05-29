@@ -1,0 +1,59 @@
+{
+    "name": "ghost-registry",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "A programming kata — React SPA with a ghost registry",
+    "engines": {
+        "node": ">=22.6.0"
+    },
+    "scripts": {
+        "start": "concurrently -k -s first -n api,app \"node server/index.ts\" \"vite\"",
+        "start:api": "node server/index.ts",
+        "test:api": "node --test server/server-test.ts",
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint 'src/**/*.{ts,tsx}' --report-unused-disable-directives --fix",
+        "format": "prettier --write 'src/**/*.{ts,tsx,css,md}'",
+        "test:unit": "vitest run --sequence.concurrent --sequence.shuffle.tests",
+        "test:integration": "playwright test -c playwright-ct.config.ts --ui",
+        "test:integration:headless": "playwright test -c playwright-ct.config.ts"
+    },
+    "keywords": [],
+    "author": {
+        "name": "Nik Sumeiko",
+        "url": "https://www.withnik.com/community"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "cors": "^2.8.6",
+        "express": "^5.2.1",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "react-router-dom": "7.16.0",
+        "tailwindcss": "^4.2.2",
+        "typescript": "^6.0.2",
+        "vite": "^8.0.7",
+        "zod": "^4.4.3"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@playwright/experimental-ct-react": "^1.59.1",
+        "@playwright/test": "^1.59.1",
+        "@tailwindcss/vite": "^4.2.2",
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.9.1",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^6.0.1",
+        "concurrently": "^10.0.0",
+        "eslint": "^10.2.0",
+        "eslint-plugin-react-hooks": "^7.1.0-canary-ed69815c-20260323",
+        "eslint-plugin-react-refresh": "^0.5.2",
+        "prettier": "^3.8.1",
+        "typescript-eslint": "^8.58.1",
+        "vitest": "^4.1.3"
+    }
+}
