@@ -16,10 +16,11 @@
         "preview": "vite preview",
         "lint": "eslint 'src/**/*.{ts,tsx}' --report-unused-disable-directives --fix",
         "format": "prettier --write 'src/**/*.{ts,tsx,css,md}'",
-        "test:unit": "vitest run --sequence.concurrent --sequence.shuffle.tests",
+        "test:unit": "vitest run -c vitest.unit.config.ts --sequence.concurrent --sequence.shuffle.tests",
         "test:integration": "playwright test -c playwright-ct.config.ts --ui",
         "test:integration:headless": "playwright test -c playwright-ct.config.ts",
-        "storybook": "storybook dev -p 6006"
+        "storybook": "storybook dev -p 6006",
+        "test:storybook": "vitest run -c vitest.storybook.config.ts"
     },
     "keywords": [],
     "author": {

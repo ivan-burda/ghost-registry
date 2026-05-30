@@ -5,6 +5,7 @@ test-results/
 playwright-report/
 playwright/.cache/
 tsconfig.node.tsbuildinfo
+coverage/
 
 *storybook.log
 storybook-static
