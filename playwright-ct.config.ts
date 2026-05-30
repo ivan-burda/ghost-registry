@@ -22,7 +22,10 @@ export default defineConfig({
             plugins: [tailwindcss() as any],
             resolve: {
                 alias: {
-                    '@design-system': path.resolve(dirname, 'src/design-system/index.tsx'),
+                    '@design-system': path.resolve(
+                        dirname,
+                        'src/design-system/index.tsx',
+                    ),
                 },
             },
         },

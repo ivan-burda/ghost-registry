@@ -1,4 +1,16 @@
-import { ContentLayout, Layout, Logo, Stripe, FormField, HeadingTitle, CheckIcon, List, ListItem, ButtonGroup, SecondaryButton } from '@design-system';
+import {
+    ContentLayout,
+    Layout,
+    Logo,
+    Stripe,
+    FormField,
+    HeadingTitle,
+    CheckIcon,
+    List,
+    ListItem,
+    ButtonGroup,
+    SecondaryButton,
+} from '@design-system';
 
 export const GhostPage = () => {
     return (

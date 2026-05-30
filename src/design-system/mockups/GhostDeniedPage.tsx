@@ -1,4 +1,11 @@
-import { ContentLayout, Layout, Logo, Stripe, HeadingTitle, Paragraph } from '@design-system';
+import {
+    ContentLayout,
+    Layout,
+    Logo,
+    Stripe,
+    HeadingTitle,
+    Paragraph,
+} from '@design-system';
 
 export const GhostDeniedPage = () => {
     return (

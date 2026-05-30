@@ -1,4 +1,16 @@
-import { ContentLayout, Layout, Logo, Stripe, FormField, HeadingTitle, ButtonGroup, PrimaryButton, TextInput, Checkbox, FormError } from '@design-system';
+import {
+    ContentLayout,
+    Layout,
+    Logo,
+    Stripe,
+    FormField,
+    HeadingTitle,
+    ButtonGroup,
+    PrimaryButton,
+    TextInput,
+    Checkbox,
+    FormError,
+} from '@design-system';
 
 export const GhostEditPage = () => {
     return (
@@ -10,7 +22,7 @@ export const GhostEditPage = () => {
             <ContentLayout>
                 <form>
                     <FormField label="Ghost name">
-                        <TextInput value="Slimer" />
+                        <TextInput defaultValue="Slimer" />
                     </FormField>
                     <Checkbox label="Secured in the registry" />
                     <FormError>Ghost name can have only letters</FormError>
