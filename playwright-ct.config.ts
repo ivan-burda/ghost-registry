@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/experimental-ct-react';
 import tailwindcss from '@tailwindcss/vite';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
     testDir: './src',
@@ -16,6 +20,11 @@ export default defineConfig({
         ctViteConfig: {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             plugins: [tailwindcss() as any],
+            resolve: {
+                alias: {
+                    '@design-system': path.resolve(dirname, 'src/design-system/index.tsx'),
+                },
+            },
         },
     },
     projects: [

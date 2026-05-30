@@ -1,6 +1,6 @@
 import type { RouteObject } from 'react-router-dom';
 import { NavigationPage } from './navigator/useCases/navigate/NavigationPage.tsx';
-import { Layout } from './ui/PageLayout.tsx';
+import { Layout } from '@design-system';
 
 export const routes: RouteObject[] = [
     {

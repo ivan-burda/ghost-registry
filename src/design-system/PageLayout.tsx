@@ -9,3 +9,7 @@ export function Layout({ children }: PropsWithChildren) {
         </div>
     );
 }
+
+export function ContentLayout({ children }: PropsWithChildren) {
+    return <div className="p-10">{children}</div>;
+}

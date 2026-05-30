@@ -1,8 +1,5 @@
-import { Layout } from '../../../ui/PageLayout.tsx';
-import { Stripe } from '../../../ui/Stripe.tsx';
-import { Logo } from '../../../ui/Logo.tsx';
 import { Link } from 'react-router-dom';
-import { Nav, NavItem } from '../../../ui/Nav.tsx';
+import { Layout, Stripe, Logo, Nav, NavItem } from '@design-system';
 
 export const NavigationPage = () => {
     return (
