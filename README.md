@@ -16,5 +16,5 @@ npm install
 npm start
 ```
 
-This starts both the API server (http://localhost:3000) and the React app
+This starts both the API server (http://localhost:3001) and the React app
 (http://localhost:5173) in parallel.

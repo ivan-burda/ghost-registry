@@ -3,11 +3,14 @@ import assert from 'node:assert/strict';
 import type { Server } from 'node:http';
 import { app } from './index.ts';
 
-const BASE = 'http://localhost:3001';
 let server: Server;
+let BASE: string;
 
 before(() => {
-    server = app.listen(3001);
+    server = app.listen(0);
+    const addr = server.address();
+    const port = typeof addr === 'object' && addr ? addr.port : 0;
+    BASE = `http://localhost:${port}`;
 });
 
 after(() => {
