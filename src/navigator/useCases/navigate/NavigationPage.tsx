@@ -10,6 +10,8 @@ export const NavigationPage = () => {
             <Nav>
                 <NavItem>
                     <Link to="/restricted">Targets</Link>
+                </NavItem>                <NavItem>
+                    <Link to="/next-target">Next Target</Link>
                 </NavItem>
                 <NavItem>
                     <Link to="/restricted">Ghost Registry</Link>
