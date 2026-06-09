@@ -1,5 +1,5 @@
-import { Loading } from '../../../design-system/Loading.tsx';
-import { Error } from '../../../design-system/Error.tsx';
+import { Loading } from '../../../../design-system/Loading.tsx';
+import { Error } from '../../../../design-system/Error.tsx';
 import { useNextTarget } from './useNextTarget.ts';
 import { NextTargetDetails } from './NextTargetDetails.tsx';
 

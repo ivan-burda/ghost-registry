@@ -13,7 +13,7 @@ import { editGhostPageSchema, GhostFormData } from './schema.ts';
 import { useUpdateGhost } from './useUpdateGhost.ts';
 import { useNavigate } from 'react-router-dom';
 import { isCaught } from '../NextTargetPage/nextTargetServices.ts';
-import { Ghost } from '../../../api/types.ts';
+import { Ghost } from '../../../../api/types.ts';
 
 interface Props {
     ghost: Ghost;

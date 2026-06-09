@@ -12,7 +12,7 @@ import {
     SecondaryButton,
     Stripe,
 } from '@design-system';
-import { Ghost } from '../../../api/types.ts';
+import { Ghost } from '../../../../api/types.ts';
 import { isCaught, isEditable } from './nextTargetServices.ts';
 
 interface Props {

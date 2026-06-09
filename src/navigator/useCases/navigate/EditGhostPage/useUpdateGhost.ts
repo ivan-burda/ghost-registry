@@ -1,5 +1,5 @@
-import { updateGhost } from '../../../api/updateGhost.ts';
-import { Ghost } from '../../../api/types.ts';
+import { updateGhost } from '../../../../api/updateGhost.ts';
+import { Ghost } from '../../../../api/types.ts';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 interface HookResult {
