@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getSingleGhost } from '../../../api/getSingleGhost.ts';
-import { Ghost } from '../../../api/types.ts';
+import { getSingleGhost } from '../../../../api/getSingleGhost.ts';
+import { Ghost } from '../../../../api/types.ts';
 
 
 

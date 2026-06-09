@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getNextTarget } from '../../../api/getNextTarget.ts';
+import { getNextTarget } from '../../../../api/getNextTarget.ts';
 
 interface Target {
     id: string;

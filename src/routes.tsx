@@ -1,10 +1,10 @@
 import type { RouteObject } from 'react-router-dom';
 import { NavigationPage } from './navigator/useCases/navigate/NavigationPage.tsx';
 import { Layout } from '@design-system';
-import { NextTargetPage } from './navigator/useCases/NextTargetPage/NextTargetPage.tsx';
-import { EditGhostPage } from './navigator/useCases/EditGhostPage/EditGhostPage.tsx';
-import { NotFoundPage } from './navigator/useCases/NotFoundPage/NotFoundPage.tsx';
-import { GhostNotEditable } from './navigator/useCases/GhostNotEditable/GhostNotEditable.tsx';
+import { NextTargetPage } from './navigator/useCases/navigate/NextTargetPage/NextTargetPage.tsx';
+import { EditGhostPage } from './navigator/useCases/navigate/EditGhostPage/EditGhostPage.tsx';
+import { NotFoundPage } from './navigator/useCases/navigate/NotFoundPage/NotFoundPage.tsx';
+import { GhostNotEditable } from './navigator/useCases/navigate/GhostNotEditable/GhostNotEditable.tsx';
 
 export const routes: RouteObject[] = [
     {

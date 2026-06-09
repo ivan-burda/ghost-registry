@@ -8,8 +8,8 @@ import {
 } from '@design-system';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSingleGhost } from './useSingleGhost.ts';
-import { Loading } from '../../../design-system/Loading.tsx';
-import { Error } from '../../../design-system/Error.tsx';
+import { Loading } from '../../../../design-system/Loading.tsx';
+import { Error } from '../../../../design-system/Error.tsx';
 import { EditGhostForm } from './EditGhostForm.tsx';
 import { isEditable } from '../NextTargetPage/nextTargetServices.ts';
 
