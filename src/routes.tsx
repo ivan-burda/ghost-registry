@@ -1,11 +1,31 @@
 import type { RouteObject } from 'react-router-dom';
 import { NavigationPage } from './navigator/useCases/navigate/NavigationPage.tsx';
 import { Layout } from '@design-system';
+import { NextTargetPage } from './navigator/useCases/NextTargetPage/NextTargetPage.tsx';
+import { EditGhostPage } from './navigator/useCases/EditGhostPage/EditGhostPage.tsx';
+import { NotFoundPage } from './navigator/useCases/NotFoundPage/NotFoundPage.tsx';
+import { GhostNotEditable } from './navigator/useCases/GhostNotEditable/GhostNotEditable.tsx';
 
 export const routes: RouteObject[] = [
     {
         path: '/',
         element: <NavigationPage />,
+    },
+    {
+        path: '/next-target',
+        element: <NextTargetPage />,
+    },
+    {
+        path: '/ghost/:id/edit',
+        element: <EditGhostPage />,
+    },
+    {
+        path: '/ghost-not-found',
+        element: <NotFoundPage />,
+    },
+    {
+        path: '/ghost-not-editable',
+        element: <GhostNotEditable />,
     },
     {
         path: '/restricted',
