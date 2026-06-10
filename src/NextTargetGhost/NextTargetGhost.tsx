@@ -34,24 +34,31 @@ export const NextTargetGhost = () => {
         navigate(`/ghost/${id}/edit`);
     };
 
-    return (<Layout>
-        <Stripe>
-            <Logo variant="xl"/>
-        </Stripe>
-        <ContentLayout>
-            <FormField label="Ghost name">
-                <HeadingTitle level={1} icon={isCaught(flags) && <CheckIcon/>} indent>
-                    {name}
-                </HeadingTitle>
-            </FormField>
-            <List>
-                <ListItem label="ID" value={id}/>
-                <ListItem label="Classification" value={classification}/>
-                <ListItem label="First seen" value={firstSeen}/>
-            </List>
-            {isEditable(flags) && (
-                <SecondaryButton onClick={editGhost}>Edit</SecondaryButton>
-            )}
-        </ContentLayout>
-    </Layout>);
+    return (
+        <Layout>
+            <Stripe >
+                <Logo variant="xl" />
+            </Stripe>
+            <ContentLayout>
+                <FormField label="Ghost name">
+                    <HeadingTitle
+                        level={1}
+                        testId="name"
+                        icon={isCaught(flags) && <CheckIcon />}
+                        indent
+                    >
+                        {name}
+                    </HeadingTitle>
+                </FormField>
+                <List>
+                    <ListItem label="ID" value={id} testId="id"/>
+                    <ListItem label="Classification" value={classification} testId="classification"/>
+                    <ListItem label="First seen" value={firstSeen} testId="timestamp"/>
+                </List>
+                {isEditable(flags) && (
+                    <SecondaryButton testId="edit-action" onClick={editGhost}>Edit</SecondaryButton>
+                )}
+            </ContentLayout>
+        </Layout>
+    );
 };
