@@ -5,7 +5,8 @@
     "type": "module",
     "description": "A programming kata — React SPA with a ghost registry",
     "engines": {
-        "node": ">=22.6.0"
+        "node": ">=22.18.0",
+        "npm": ">=11.10.0"
     },
     "scripts": {
         "start": "concurrently -k -s first -n api,app \"node server/index.ts\" \"vite\"",

@@ -14,8 +14,10 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 22.18.0
           cache: npm
+
+      - run: npm install -g npm@11
 
       - run: npm ci
 
@@ -28,8 +30,10 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 22.18.0
           cache: npm
+
+      - run: npm install -g npm@11
 
       - run: npm ci
 
@@ -42,8 +46,10 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 22.18.0
           cache: npm
+
+      - run: npm install -g npm@11
 
       - run: npm ci
 
