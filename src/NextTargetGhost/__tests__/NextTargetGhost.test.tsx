@@ -2,7 +2,6 @@ import { expect, test } from '../../../playwright/test.ts';
 import { BASE_URL } from '../../api/baseUrl.ts';
 import { TestProviders } from '../../Navigation/__tests__/TestProviders.tsx';
 import { NextTargetGhost } from '../NextTargetGhost.tsx';
-import { MemoryRouter } from 'react-router-dom';
 
 test('display editable ghost', async ({ mount, page }) => {
     await page.route(`${BASE_URL}/api/v1/target`, (route) => {
@@ -19,9 +18,7 @@ test('display editable ghost', async ({ mount, page }) => {
 
     const component = await mount(
         <TestProviders>
-            <MemoryRouter>
             <NextTargetGhost />
-            </MemoryRouter>
         </TestProviders>,
         '/next-target',
     );
@@ -49,9 +46,7 @@ test('display non-editable ghost', async ({ mount, page }) => {
 
     const component = await mount(
         <TestProviders>
-            <MemoryRouter>
-                <NextTargetGhost />
-            </MemoryRouter>
+            <NextTargetGhost />
         </TestProviders>,
         '/next-target',
     );

@@ -4,7 +4,7 @@ import {BackButton} from "../design-system/BackButton.tsx";
 
 export const EditGhostDenied: FC = () =>
     (
-        <Layout>
+        <Layout testId="edit-ghost-denied-page">
             <Stripe variant="secondary">
                 <BackButton/>
                 <Logo variant="sm"/>
