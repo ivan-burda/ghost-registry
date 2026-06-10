@@ -21,7 +21,7 @@ test('navigate to Next Target page', async ({mount, page}) => {
                 firstSeen: '2026-05-19',
                 flags: ['editable'],
             },
-        }),
+        })}
     );
 
     const component = await mount(<TestProviders><App/></TestProviders>, '/');
