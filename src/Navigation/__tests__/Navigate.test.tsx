@@ -12,23 +12,17 @@ test('navigate to restricted area', async ({mount, page}) => {
 });
 
 test('navigate to Next Target page', async ({mount, page}) => {
-    await page.route(`${BASE_URL}/api/v1/target`, async (route) => {
-        console.log('matched');
-        await route.fulfill({
-            status: 200,
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-            },
-            body: JSON.stringify({
+    await page.route(`${BASE_URL}/api/v1/target`, (route) => {
+        route.fulfill({
+            json: {
                 id: 'h7A',
                 name: 'Leomoun',
                 classification: 'Class IV',
                 firstSeen: '2026-05-19',
                 flags: ['editable'],
-            }),
-        });
-    });
+            },
+        }),
+    );
 
     const component = await mount(<TestProviders><App/></TestProviders>, '/');
     await component.getByTestId('next-target').click();
