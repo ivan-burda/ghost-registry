@@ -2,7 +2,6 @@ import {useQuery} from '@tanstack/react-query';
 import {getNextTargetGhost} from '../api/getNextTargetGhost.ts';
 import {Ghost} from "../api/types.ts";
 
-
 interface HookResult {
     isLoading: boolean;
     error: Error | null;
@@ -10,7 +9,7 @@ interface HookResult {
 }
 
 export const useNextTargetGhost = (): HookResult => {
-    const { data, isLoading, error } = useQuery({
+    const {data, isLoading, error} = useQuery({
         queryKey: ['target'],
         queryFn: getNextTargetGhost,
     });

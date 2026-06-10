@@ -1,11 +1,7 @@
 import {patchGhost} from '../api/patchGhost.ts';
-import {Ghost} from '../api/types.ts';
+import {Ghost, GhostUpdate} from '../api/types.ts';
 import {useMutation, useQueryClient} from '@tanstack/react-query';
 
-export interface GhostUpdate {
-name:string;
-flags:string[];
-}
 
 interface HookResult {
     isLoading: boolean;

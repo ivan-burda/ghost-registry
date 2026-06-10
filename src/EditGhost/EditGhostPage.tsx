@@ -5,8 +5,8 @@ import {useSingleGhost} from './useSingleGhost.ts';
 import {Loading} from '../design-system/Loading.tsx';
 import {Error} from '../design-system/Error.tsx';
 import {EditGhostForm} from './EditGhostForm.tsx';
-import {isEditable} from '../NextTargetGhost/nextTargetServices.ts';
 import {BackButton} from "../design-system/BackButton.tsx";
+import {isEditable} from "../flagService.ts";
 
 export const EditGhostPage: FC = () => {
     const {id} = useParams<{ id: string }>();

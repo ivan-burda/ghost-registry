@@ -14,7 +14,7 @@ import {
     Stripe,
 } from '@design-system';
 import {useNavigate} from "react-router-dom";
-import {isCaught, isEditable} from "./nextTargetServices.ts";
+import {isCaught, isEditable} from "../flagService.ts";
 
 export const NextTargetGhost = () => {
     const {isLoading, error, target} = useNextTargetGhost();

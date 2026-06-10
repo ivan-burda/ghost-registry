@@ -2,9 +2,8 @@ import {FC} from 'react';
 import {ContentLayout, HeadingTitle, Layout, Logo, Paragraph, Stripe} from '@design-system';
 import {BackButton} from "../design-system/BackButton.tsx";
 
-
-export const EditGhostDenied: FC = () => {
-    return (
+export const EditGhostDenied: FC = () =>
+    (
         <Layout>
             <Stripe variant="secondary">
                 <BackButton/>
@@ -17,5 +16,4 @@ export const EditGhostDenied: FC = () => {
                 </Paragraph>
             </ContentLayout>
         </Layout>
-    );
-}
+    )
