@@ -1,8 +1,10 @@
+import { BASE_URL } from './baseUrl.ts';
+
 export const updateGhost = async (
     id: string,
     data: Partial<{ name: string; flags: string[] }>,
 ) => {
-    const response = await fetch(`http://localhost:3001/api/v1/ghost/${id}`,{
+    const response = await fetch(`${BASE_URL}/api/v1/ghost/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
