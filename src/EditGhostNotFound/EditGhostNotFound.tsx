@@ -1,8 +1,7 @@
-import { FC } from 'react';
-import { ContentLayout, HeadingTitle, Layout, Logo, Paragraph, Stripe } from '@design-system';
+import {FC} from 'react';
+import {ContentLayout, HeadingTitle, Layout, Logo, Paragraph, Stripe,} from '@design-system';
 
-
-export const GhostNotEditable: FC = () => {
+export const EditGhostNotFound: FC= () =>{
     return (
         <Layout>
             <Stripe variant="secondary">
@@ -15,11 +14,9 @@ export const GhostNotEditable: FC = () => {
                 <Logo variant="sm" />
             </Stripe>
             <ContentLayout>
-                <HeadingTitle level={1}>Access denied</HeadingTitle>
-                <Paragraph>
-                    This ghost's record is readonly. Editing is not permitted.
-                </Paragraph>
+                <HeadingTitle level={1}>404</HeadingTitle>
+                <Paragraph>Ghost not found.</Paragraph>
             </ContentLayout>
         </Layout>
     );
-}
+};

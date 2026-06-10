@@ -1,6 +1,6 @@
-import { BASE_URL } from './baseUrl.ts';
+import {BASE_URL} from './baseUrl.ts';
 
-export const getNextTarget = async () => {
+export const getNextTargetGhost = async () => {
     const response = await fetch(`${BASE_URL}/api/v1/target`);
 
     if (!response.ok) {

@@ -1,6 +1,6 @@
-import { BASE_URL } from './baseUrl.ts';
+import {BASE_URL} from './baseUrl.ts';
 
-export const updateGhost = async (
+export const patchGhost = async (
     id: string,
     data: Partial<{ name: string; flags: string[] }>,
 ) => {
