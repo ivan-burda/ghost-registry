@@ -2,8 +2,8 @@ import {FC} from 'react';
 import {ContentLayout, HeadingTitle, Layout, Logo, Paragraph, Stripe,} from '@design-system';
 import {BackButton} from "../design-system/BackButton.tsx";
 
-export const EditGhostNotFound: FC = () => {
-    return (
+export const EditGhostNotFound: FC = () =>
+    (
         <Layout>
             <Stripe variant="secondary">
                 <BackButton/>
@@ -15,4 +15,3 @@ export const EditGhostNotFound: FC = () => {
             </ContentLayout>
         </Layout>
     );
-};

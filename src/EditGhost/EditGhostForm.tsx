@@ -3,10 +3,11 @@ import {ButtonGroup, Checkbox, FormError, FormField, PrimaryButton, TextInput,} 
 import {GhostFormData} from './schema.ts';
 import {useUpdateGhost} from './useUpdateGhost.ts';
 import {useNavigate} from 'react-router-dom';
-import {isCaught} from '../NextTargetGhost/nextTargetServices.ts';
+
 import {Ghost} from '../api/types.ts';
 import {getPatchFlags} from "./getPatchFlags.ts";
 import {useGhostEditForm} from "./useGhostEditForm.ts";
+import {isCaught} from "../flagService.ts";
 
 interface Props {
     ghost: Ghost;

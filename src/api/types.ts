@@ -5,3 +5,8 @@ export interface Ghost {
     firstSeen: string;
     flags: string[];
 }
+
+export interface GhostUpdate {
+    name: string;
+    flags: string[];
+}

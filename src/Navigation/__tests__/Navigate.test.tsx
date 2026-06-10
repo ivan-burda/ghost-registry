@@ -1,17 +1,17 @@
-import { expect, test } from '../../../playwright/test.ts';
-import { App } from '../../App.tsx';
-import { TestProviders } from '../../__tests__/TestProviders.tsx';
-import { BASE_URL } from '../../api/baseUrl.ts';
+import {expect, test} from '../../../playwright/test.ts';
+import {App} from '../../App.tsx';
+import {TestProviders} from './TestProviders.tsx';
+import {BASE_URL} from '../../api/baseUrl.ts';
 
-test('navigate to restricted area', async ({ mount, page }) => {
-    const component = await mount(<App />, '/');
+test('navigate to restricted area', async ({mount, page}) => {
+    const component = await mount(<App/>, '/');
 
     await component.getByText('Targets').click();
 
     await expect(page).toHaveURL('restricted');
 });
 
-test('navigate to Next Target page', async ({ mount, page }) => {
+test('navigate to Next Target page', async ({mount, page}) => {
     await page.route(`${BASE_URL}/api/v1/target`, async (route) => {
         console.log('matched');
         await route.fulfill({
@@ -30,7 +30,7 @@ test('navigate to Next Target page', async ({ mount, page }) => {
         });
     });
 
-    const component = await mount(<TestProviders><App /></TestProviders>, '/');
+    const component = await mount(<TestProviders><App/></TestProviders>, '/');
     await component.getByTestId('next-target').click();
 
     await expect(page).toHaveURL('next-target');
