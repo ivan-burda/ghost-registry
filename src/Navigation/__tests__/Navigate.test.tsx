@@ -12,7 +12,7 @@ test('navigate to restricted area', async ({mount, page}) => {
 });
 
 test('navigate to Next Target page', async ({mount, page}) => {
-    await page.route(`${BASE_URL}/api/v1/target`, (route) => {
+    await page.route(`${BASE_URL}/api/v1/target`, (route) => 
         route.fulfill({
             json: {
                 id: 'h7A',
