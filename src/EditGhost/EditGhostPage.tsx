@@ -6,18 +6,19 @@ import {Loading} from '../design-system/Loading.tsx';
 import {Error} from '../design-system/Error.tsx';
 import {EditGhostForm} from './EditGhostForm.tsx';
 import {isEditable} from '../NextTargetGhost/nextTargetServices.ts';
+import {BackButton} from "../design-system/BackButton.tsx";
 
 export const EditGhostPage: FC = () => {
-    const { id } = useParams<{ id: string }>();
-    const { isLoading, error, ghost } = useSingleGhost(id);
+    const {id} = useParams<{ id: string }>();
+    const {isLoading, error, ghost} = useSingleGhost(id);
     const navigate = useNavigate();
 
     if (isLoading) {
-        return <Loading />;
+        return <Loading/>;
     }
 
     if (error && error.message !== 'Failed to fetch target') {
-        return <Error />;
+        return <Error/>;
     }
 
     if (!ghost) {
@@ -33,11 +34,12 @@ export const EditGhostPage: FC = () => {
     return (
         <Layout>
             <Stripe variant="secondary">
+                <BackButton/>
                 <HeadingTitle level={5}>Editing ghost</HeadingTitle>
-                <Logo variant="sm" />
+                <Logo variant="sm"/>
             </Stripe>
             <ContentLayout>
-                <EditGhostForm ghost={ghost} />
+                <EditGhostForm ghost={ghost}/>
             </ContentLayout>
         </Layout>
     );
