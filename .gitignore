@@ -10,3 +10,4 @@ coverage/
 *storybook.log
 storybook-static
 xml
+.idea
