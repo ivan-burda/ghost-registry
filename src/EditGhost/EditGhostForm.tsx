@@ -1,45 +1,33 @@
 import {FC, useEffect, useMemo} from 'react';
 import {ButtonGroup, Checkbox, FormError, FormField, PrimaryButton, TextInput,} from '@design-system';
-import {useForm} from 'react-hook-form';
-import {zodResolver} from '@hookform/resolvers/zod';
-import {editGhostPageSchema, GhostFormData} from './schema.ts';
+import {GhostFormData} from './schema.ts';
 import {useUpdateGhost} from './useUpdateGhost.ts';
 import {useNavigate} from 'react-router-dom';
 import {isCaught} from '../NextTargetGhost/nextTargetServices.ts';
 import {Ghost} from '../api/types.ts';
 import {getPatchFlags} from "./getPatchFlags.ts";
+import {useGhostEditForm} from "./useGhostEditForm.ts";
 
 interface Props {
     ghost: Ghost;
 }
 
-export const EditGhostForm: FC<Props> = ({ ghost }) => {
-    const { id, name, flags } = ghost;
+export const EditGhostForm: FC<Props> = ({ghost}) => {
+    const {id, name, flags} = ghost;
     const isGhostCaught = useMemo(() => isCaught(flags), [flags]);
+    const {update, error: saveError} = useUpdateGhost(id);
+    const {reset, register, handleSubmit, formState: {errors}} = useGhostEditForm({name, isCaught: isGhostCaught})
 
     const navigate = useNavigate();
     const returnToNextTarget = () => {
         navigate('/next-target');
+
     };
 
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-    } = useForm<GhostFormData>({
-        resolver: zodResolver(editGhostPageSchema),
-        defaultValues: {
-            name,
-            isCaught: isGhostCaught,
-        },
-    });
-
     useEffect(() => {
-        reset({ name, isCaught: isGhostCaught });
+        reset({name, isCaught: isGhostCaught});
     }, [name, isGhostCaught, reset]);
 
-    const { update,error:saveError } = useUpdateGhost(id);
     const onSubmit = (data: GhostFormData) => {
         update({
             name: data.name,
@@ -50,7 +38,7 @@ export const EditGhostForm: FC<Props> = ({ ghost }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <FormField label="Ghost name">
-                <TextInput {...register('name')} placeholder="Name" />
+                <TextInput {...register('name')} placeholder="Name"/>
             </FormField>
             <Checkbox
                 {...register('isCaught')}
