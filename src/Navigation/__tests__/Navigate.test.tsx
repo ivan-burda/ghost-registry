@@ -1,7 +1,7 @@
-import { expect, test } from '../../../../../playwright/test';
-import { App } from '../../../../App.tsx';
-import { TestProviders } from './TestProviders.tsx';
-import { BASE_URL } from '../../../../api/baseUrl.ts';
+import { expect, test } from '../../../playwright/test.ts';
+import { App } from '../../App.tsx';
+import { TestProviders } from '../../__tests__/TestProviders.tsx';
+import { BASE_URL } from '../../api/baseUrl.ts';
 
 test('navigate to restricted area', async ({ mount, page }) => {
     const component = await mount(<App />, '/');

@@ -1,5 +1,6 @@
-import { FC } from 'react';
-import {useNavigate} from 'react-router-dom';
+import {Loading} from '../design-system/Loading.tsx';
+import {Error} from '../design-system/Error.tsx';
+import {useNextTargetGhost} from './useNextTargetGhost.ts';
 import {
     CheckIcon,
     ContentLayout,
@@ -12,28 +13,32 @@ import {
     SecondaryButton,
     Stripe,
 } from '@design-system';
-import { Ghost } from '../../../../api/types.ts';
-import { isCaught, isEditable } from './nextTargetServices.ts';
+import {useNavigate} from "react-router-dom";
+import {isCaught, isEditable} from "./nextTargetServices.ts";
 
-interface Props {
-    target: Ghost
-}
-
-export const NextTargetDetails: FC<Props> = ({
-    target
-}) => {
-    const {id, classification, firstSeen, flags, name} = target;
+export const NextTargetGhost = () => {
+    const { isLoading, error, target } = useNextTargetGhost();
     const navigate = useNavigate()
-    const onClick = () => {
+
+
+    if (isLoading) {
+        return <Loading />;
+    }
+
+    if (error) {
+        return <Error />;
+    }
+
+    const {id, classification, firstSeen, flags, name} = target;
+    const editGhost = () => {
         navigate(`/ghost/${id}/edit`);
     };
-
-    return (
-        <Layout>
-            <Stripe>
-                <Logo variant="xl" />
-            </Stripe>
-            <ContentLayout>
+    
+    return (  <Layout>
+        <Stripe>
+            <Logo variant="xl" />
+        </Stripe>
+        <ContentLayout>
             <FormField label="Ghost name">
                 <HeadingTitle level={1} icon={isCaught(flags) && <CheckIcon />} indent>
                     {name}
@@ -45,9 +50,8 @@ export const NextTargetDetails: FC<Props> = ({
                 <ListItem label="First seen" value={firstSeen} />
             </List>
             {isEditable(flags) && (
-                <SecondaryButton onClick={onClick}>Edit</SecondaryButton>
+                <SecondaryButton onClick={editGhost}>Edit</SecondaryButton>
             )}
-            </ContentLayout>
-        </Layout>
-    );
+        </ContentLayout>
+    </Layout>);
 };

@@ -1,10 +1,10 @@
-import type { RouteObject } from 'react-router-dom';
-import { NavigationPage } from './navigator/useCases/navigate/NavigationPage.tsx';
-import { Layout } from '@design-system';
-import { NextTargetPage } from './navigator/useCases/navigate/NextTargetPage/NextTargetPage.tsx';
-import { EditGhostPage } from './navigator/useCases/navigate/EditGhostPage/EditGhostPage.tsx';
-import { NotFoundPage } from './navigator/useCases/navigate/NotFoundPage/NotFoundPage.tsx';
-import { GhostNotEditable } from './navigator/useCases/navigate/GhostNotEditable/GhostNotEditable.tsx';
+import type {RouteObject} from 'react-router-dom';
+import {NavigationPage} from './Navigation/NavigationPage.tsx';
+import {Layout} from '@design-system';
+import {NextTargetGhost} from './NextTargetGhost/NextTargetGhost.tsx';
+import {EditGhostPage} from './EditGhost/EditGhostPage.tsx';
+import {EditGhostNotFound} from './EditGhostNotFound/EditGhostNotFound.tsx';
+import {EditGhostDenied} from './EditGhostDenied/EditGhostDenied.tsx';
 
 export const routes: RouteObject[] = [
     {
@@ -13,7 +13,7 @@ export const routes: RouteObject[] = [
     },
     {
         path: '/next-target',
-        element: <NextTargetPage />,
+        element: <NextTargetGhost />,
     },
     {
         path: '/ghost/:id/edit',
@@ -21,11 +21,11 @@ export const routes: RouteObject[] = [
     },
     {
         path: '/ghost-not-found',
-        element: <NotFoundPage />,
+        element: <EditGhostNotFound />,
     },
     {
         path: '/ghost-not-editable',
-        element: <GhostNotEditable />,
+        element: <EditGhostDenied />,
     },
     {
         path: '/restricted',
