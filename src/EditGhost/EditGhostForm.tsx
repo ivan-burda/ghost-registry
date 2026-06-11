@@ -38,7 +38,7 @@ export const EditGhostForm: FC<Props> = ({ghost}) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <FormField label="Ghost name">
+            <FormField testId="name-field" label="Ghost name">
                 <TextInput {...register('name')} placeholder="Name"/>
             </FormField>
             <Checkbox

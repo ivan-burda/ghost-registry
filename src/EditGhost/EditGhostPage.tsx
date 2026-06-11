@@ -1,45 +1,48 @@
-import {FC} from 'react';
-import {ContentLayout, HeadingTitle, Layout, Logo, Stripe,} from '@design-system';
-import {useNavigate, useParams} from 'react-router-dom';
-import {useSingleGhost} from './useSingleGhost.ts';
-import {Loading} from '../design-system/Loading.tsx';
-import {Error} from '../design-system/Error.tsx';
-import {EditGhostForm} from './EditGhostForm.tsx';
-import {BackButton} from "../design-system/BackButton.tsx";
-import {isEditable} from "../flagService.ts";
+import { FC } from 'react';
+import {
+    ContentLayout,
+    HeadingTitle,
+    Layout,
+    Logo,
+    Stripe,
+} from '@design-system';
+import { Navigate, useParams } from 'react-router-dom';
+import { useSingleGhost } from './useSingleGhost.ts';
+import { Loading } from '../design-system/Loading.tsx';
+import { Error } from '../design-system/Error.tsx';
+import { EditGhostForm } from './EditGhostForm.tsx';
+import { BackButton } from '../design-system/BackButton.tsx';
+import { isEditable } from '../flagService.ts';
 
 export const EditGhostPage: FC = () => {
-    const {id} = useParams<{ id: string }>();
-    const {isLoading, error, ghost} = useSingleGhost(id);
-    const navigate = useNavigate();
+    const { id } = useParams<{ id: string }>();
+    const { isLoading, error, ghost } = useSingleGhost(id);
 
     if (isLoading) {
-        return <Loading/>;
+        return <Loading />;
     }
 
     if (error && error.message !== 'Failed to fetch target') {
-        return <Error/>;
+        return <Error />;
     }
 
     if (!ghost) {
-        navigate('/ghost-not-found');
-        return;
+        return <Navigate to="/ghost-not-found" replace />;
     }
 
     if (!isEditable(ghost.flags)) {
-        navigate('/ghost-not-editable');
-        return;
+        return <Navigate to="/ghost-not-editable" replace />;
     }
 
     return (
         <Layout>
             <Stripe variant="secondary">
-                <BackButton/>
+                <BackButton />
                 <HeadingTitle level={5}>Editing ghost</HeadingTitle>
-                <Logo variant="sm"/>
+                <Logo variant="sm" />
             </Stripe>
             <ContentLayout>
-                <EditGhostForm ghost={ghost}/>
+                <EditGhostForm ghost={ghost} />
             </ContentLayout>
         </Layout>
     );
